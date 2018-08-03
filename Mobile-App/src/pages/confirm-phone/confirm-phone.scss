@@ -1,5 +1,6 @@
-page-confirm-phone {
-
+.content {
+    text-align:center;
+    margin:auto;
 }
 .circle-pic{
     width:190px;
@@ -9,10 +10,23 @@ page-confirm-phone {
     display: block;
      margin-left: auto;
      margin-right: auto;
+     margin:50px auto 40px;
  }
  .btn{
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
-     margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 2px !important;
+    background: #006C35;
+    color: #fff;
+    border: 0;
+    height: 40px;
+ }
+
+ .input{
+     border:1px solid #eee;
+     padding:10px;
+     height: 41px;
+     margin-bottom:20px;
  }

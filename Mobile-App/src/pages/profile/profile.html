@@ -7,7 +7,9 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Profile</ion-title>
+    <ion-title>
+            <p style="color:#fff; font-weight:200;">Profile</p>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,17 +21,18 @@
         <ion-col>
           <div class="profile-photo">
             <img (click)="editimage()"  src="{{imgPreview}}">
+            <br>
+            <h1 class="namee">{{name}}</h1>
+            <h3 style="" padding>{{balance}} SAR</h3>
           </div>
         </ion-col>
       </ion-row>
     </ion-card>
     <ion-list class="profile-detail">
-      <h3  style="float:left;" padding>SAR</h3>
-      <h3  style="float:right;" padding>{{balance}}</h3>
-      <h2 class="namee">{{name}}</h2>
-      <h2 class="namee">{{national_id}}</h2>
-      <h2 class="namee">******</h2>
-      <button ion-button block clear color="royal" (click)="EditPinCode()">Edit</button>
+      
+      <h4 class="namee">NationalID : {{national_id}}</h4>
+      <h4 class="namee">PIN-CODE : ******       <button ion-button block clear color="royal" (click)="EditPinCode()">Edit</button>
+</h4>
       <button class="btn" ion-button round outline (click)="goQR()">QR</button>
     </ion-list>
   </ion-content>

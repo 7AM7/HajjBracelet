@@ -1,3 +1,28 @@
-page-branches {
+page-request {
 
+}
+
+.toolbar-background {
+  background-color: #006C35;
+  color:#fff;
+}
+
+.card-image {
+    float: left;
+}
+
+.card-stacked {
+    float: left;
+    width: 140px;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.card-price {
+    float: right;
+}
+
+.card.horizontal {
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 10px;
 }

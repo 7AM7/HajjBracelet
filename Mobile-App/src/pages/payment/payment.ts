@@ -20,10 +20,16 @@ export class PaymentPage {
   testConfirmResult:string;
   testConfirmOpen:boolean;
   ItemId:string;
+  ItemName:string;
+  ItemImage:string;
+  ItemAmount:string;
   code:string;
   response:any;
   constructor(public restProvider: RestProvider,public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
     this.ItemId = navParams.get('ItemId');
+    this.ItemName = navParams.get('ItemName');
+    this.ItemImage = navParams.get('ItemImage');
+    this.ItemAmount = navParams.get('ItemAmount');
     console.log(this.ItemId );
   }
 

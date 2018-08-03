@@ -8,14 +8,15 @@
 
     <ion-navbar>
       <ion-title>
-        Branches
+        <p style="color:#fff; font-weight:200;">Branches</p>
       </ion-title>
   
-      <ion-buttons (click)="goProfile()" end>
+       <ion-buttons (click)="goProfile()" end>
         <button ion-button icon-only >
-          <ion-icon name="menu"></ion-icon>
+          <ion-icon name="md-person"></ion-icon>
         </button>
       </ion-buttons>
+      
     </ion-navbar>
   
   </ion-header>
@@ -33,15 +34,20 @@
     <div *ngFor="let new of BranchesTransaction"  class="col s12 m7" >
 
         <div class="card horizontal" style="display:inline-block;height:auto;width:100%;">
-          <div class="card-image" style="display:inline;">
-              <img #img style="float:left;height:100px;width:30%; " src="{{new.imgUrl}}">
+          
+           <div class="card-image" style="display:inline;">
+              <img #img style="float:left;height:70px;width:70px; border-radius:50% " src="{{new.imgUrl}}">
             </div>
-        <div class="card-stacked" style="display:inline;">
-  
-              <h3 style="font-weight: bold;width:60%;word-wrap:break-word;height:20%;margin-right:10px;float:right;text-align: left; color:black;">{{new.name}}</h3>
-              <p style="width:60%;word-wrap:break-word;height:80%;margin-right:14px;float:right;text-align: left;color:gray;">{{new.date}}</p> 
-              <p style="width:60%;word-wrap:break-word;height:80%;margin-right:14px;float:right;text-align: left;color:gray;">{{new.amount}}</p> 
-          </div>
+            
+            <div class="card-stacked" style="display:inline;">
+                <h3 style="float:left; font-weight:bold; word-wrap:break-word;color:black; margin-top:10px;">{{new.name}}</h3>
+                <p style="float:left; word-wrap:break-word; color:gray; margin-top: 0;">{{new.date}}</p> 
+            </div>
+
+            <div class="card-price">
+              <p style="word-wrap:break-word; float:right;text-align: left;color:gray;">{{new.amount}}</p> 
+            </div>
+        
       </div>
     </div>
 </ion-content>

@@ -60,9 +60,8 @@ export class RequestPage {
 
       });
   }
-  openRequests(requestId)
+  openRequests(request)
   {
-    console.log(requestId);
-    this.navCtrl.push(PaymentPage,{ItemId:requestId});
+    this.navCtrl.push(PaymentPage,{ItemId:request.id,ItemImage:request.imgUrl,ItemName:request.name,ItemAmount:request.amount});
   }
 }

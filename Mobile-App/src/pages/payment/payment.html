@@ -7,7 +7,9 @@
 <ion-header>
 
     <ion-navbar>
-      <ion-title>Payment</ion-title>
+      <ion-title>
+        <p style="color:#fff; font-weight:200;">Payment Request</p>
+      </ion-title>
     </ion-navbar>
   
   </ion-header>
@@ -18,17 +20,17 @@
         <ion-row>
           <ion-col>
             <div class="profile-photo">
-              <img src="{{avatar}}">
+              <img src="{{ItemImage}}">
             </div>
            
           </ion-col>
         </ion-row>
       </ion-card>
       <ion-list class="profile-detail">
-        <h2 class="namee">Metro </h2>
-        <h2 class="namee">-200$</h2>
-        <button class="btn" ion-button round outline (click)="YesBtn()">Yes</button>
-        <button class="btn" ion-button round outline (click)="NoBtn()">No</button>
+        <h2 class="namee">{{ItemName}} wants to withdraw {{ItemAmount}} RSA from your account</h2>
+        <br>
+        <button class="btn" ion-button round outline (click)="YesBtn()">Accept</button>
+        <button class="btn" ion-button round outline (click)="NoBtn()">Reject</button>
       </ion-list>
     </ion-content>
   
