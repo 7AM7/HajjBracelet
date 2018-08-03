@@ -1,0 +1,47 @@
+<!--
+  Generated template for the RequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      Requests
+    </ion-title>
+
+    <ion-buttons (click)="goProfile()" end>
+      <button ion-button icon-only >
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngFor="let new of userRequestTransaction" (click)="openRequests(new.id)"  class="col s12 m7" >
+    <input hidden [(ngModel)]="ItemId" type="text" value="{{new.id}}"/>
+      <div class="card horizontal" style="display:inline-block;height:auto;width:100%;">
+        <div class="card-image" style="display:inline;">
+            <img #img style="float:left;height:100px;width:30%; " src="{{new.imgUrl}}">
+          </div>
+      <div class="card-stacked" style="display:inline;">
+
+            <h3 style="font-weight: bold;width:60%;word-wrap:break-word;height:20%;margin-right:10px;float:right;text-align: left; color:black;">{{new.name}}</h3>
+            <p style="width:60%;word-wrap:break-word;height:80%;margin-right:14px;float:right;text-align: left;color:gray;">{{new.date}}</p> 
+            <p style="width:60%;word-wrap:break-word;height:80%;margin-right:14px;float:right;text-align: left;color:gray;">{{new.amount}}</p> 
+        </div>
+    </div>
+  </div>
+</ion-content>

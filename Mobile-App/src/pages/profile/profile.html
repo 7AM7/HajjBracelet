@@ -18,17 +18,18 @@
       <ion-row>
         <ion-col>
           <div class="profile-photo">
-            <img src="{{avatar}}">
+            <img (click)="editimage()"  src="{{imgPreview}}">
           </div>
-          <button ion-button (click)="editimage()" block clear color="royal">Change profile picture</button>
         </ion-col>
       </ion-row>
     </ion-card>
     <ion-list class="profile-detail">
-      <h3  style="float:left;" padding>EG</h3>
-      <h3  style="float:right;" padding>50$</h3>
-      <h2 class="namee">mohammed </h2>
-      <h2 class="namee">22950000</h2>
+      <h3  style="float:left;" padding>SAR</h3>
+      <h3  style="float:right;" padding>{{balance}}</h3>
+      <h2 class="namee">{{name}}</h2>
+      <h2 class="namee">{{national_id}}</h2>
+      <h2 class="namee">******</h2>
+      <button ion-button block clear color="royal" (click)="EditPinCode()">Edit</button>
       <button class="btn" ion-button round outline (click)="goQR()">QR</button>
     </ion-list>
   </ion-content>

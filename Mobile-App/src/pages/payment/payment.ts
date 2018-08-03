@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { StoresPage } from '../stores/stores';
 import { AlertController } from 'ionic-angular';
+import { RestProvider } from '../../providers/rest/rest';
 /**
  * Generated class for the PaymentPage page.
  *
@@ -17,12 +19,18 @@ import { AlertController } from 'ionic-angular';
 export class PaymentPage {
   testConfirmResult:string;
   testConfirmOpen:boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  ItemId:string;
+  code:string;
+  response:any;
+  constructor(public restProvider: RestProvider,public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+    this.ItemId = navParams.get('ItemId');
+    console.log(this.ItemId );
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymentPage');
   }
+
   YesBtn()
   {
     let alert = this.alertCtrl.create({
@@ -30,7 +38,9 @@ export class PaymentPage {
       inputs: [
         {
           name: 'sCode',
+          id:"sCodee",
           placeholder: 'Scure Code'
+          ,
         },
       ],
       buttons: [
@@ -38,8 +48,10 @@ export class PaymentPage {
           text: 'OK',
           role: 'OK',
           handler: data => {
-            console.log("Payment maybe done ...");
-            this.navCtrl.setRoot(TabsPage);
+            var code1=document.getElementById('sCodee').value;
+            console.log(code1);
+            this.ConfirmCode(code1);
+      
           }
         },
 
@@ -47,7 +59,22 @@ export class PaymentPage {
     });
     alert.present();
   }
+  ConfirmCode(code)
+  {
+    console.log(this.ItemId);
+    if(code== null || this.ItemId==null ) return false;
+
+    this.restProvider.ConfirmCode(code,"ACCEPTED",this.ItemId).then(data => {
+      this.response = data;
+      console.log(data);
+      if(this.response['isSuccess'] == true)
+      {
+        this.navCtrl.setRoot(StoresPage);
+      }
+      console.log(this.response);
+    });
+  }
   NoBtn(){
-    this.navCtrl.setRoot(TabsPage);
+    this.navCtrl.setRoot(StoresPage);
   }
 }

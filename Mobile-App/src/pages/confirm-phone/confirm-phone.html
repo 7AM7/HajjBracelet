@@ -17,9 +17,9 @@
     <img  class="circle-pic" src="https://images-na.ssl-images-amazon.com/images/I/41xi-Aee9OL._SL500_AC_SS350_.jpg" />
     <ion-item>
         <ion-label color="primary" floating>Verification Code</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="code"></ion-input>
       </ion-item>
 
-      <button class="btn" ion-button round outline (click)="goHomePage()">Confirm</button>
-
+      <button class="btn" ion-button round outline (click)="goHomePage(code)">Confirm</button>
+      <ion-label>{{message}}</ion-label>
 </ion-content>

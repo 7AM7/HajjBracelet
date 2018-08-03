@@ -14,11 +14,9 @@
 
 <ion-content padding>
     <img  class="circle-pic" src="https://images-na.ssl-images-amazon.com/images/I/41xi-Aee9OL._SL500_AC_SS350_.jpg" />
-    <ion-item>
-        <ion-label color="primary" floating>Phone</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
+        
+        <input type="text" class="input" [(ngModel)]="mobile" />
 
-      <button class="btn" ion-button round outline (click)="ConfrimPhone()">Login</button>
-
+      <button class="btn" ion-button round outline (click)="ConfrimPhone(country_code, mobile)">Login</button>
+      <ion-label>{{message}}</ion-label>
 </ion-content>

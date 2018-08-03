@@ -22,6 +22,14 @@
 
 
 <ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
     <div *ngFor="let new of BranchesTransaction"  class="col s12 m7" >
 
         <div class="card horizontal" style="display:inline-block;height:auto;width:100%;">
